@@ -19,10 +19,11 @@ public class ShoppingCartController {
     }
 
     @GetMapping("/add")
-    public String addItem (@RequestParam List<Integer> IDs) {
-        shoppingCartInterface.add(IDs);
+    public String addItem(@RequestParam List<Integer> ids) {
+        shoppingCartInterface.add(ids);
         return "Items successfully added to cart!";
     }
+
     @GetMapping("/get")
     public List<Integer> getCart() {
         return shoppingCartInterface.get();

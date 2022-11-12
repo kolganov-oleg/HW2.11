@@ -3,6 +3,7 @@ package sky.pro.hw2_11.services;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.annotation.SessionScope;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -18,13 +19,13 @@ public class ShoppingCartService implements ShoppingCartServiceImpl {
     }
 
     @Override
-    public void add(List<Integer> IDList) {
-        itemList = IDList.stream()
+    public void add(List<Integer> idList) {
+        itemList = idList.stream()
                 .collect(Collectors.toList());
     }
 
     @Override
     public List<Integer> get() {
-        return itemList;
+        return Collections.unmodifiableList(itemList);
     }
 }

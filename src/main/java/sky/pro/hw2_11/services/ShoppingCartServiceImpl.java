@@ -6,9 +6,8 @@ import org.springframework.web.context.annotation.SessionScope;
 import java.util.List;
 
 @Service
-@SessionScope
 public interface ShoppingCartServiceImpl {
-    void add(List<Integer> IDList);
+    void add(List<Integer> idList);
 
     List<Integer> get();
 }
